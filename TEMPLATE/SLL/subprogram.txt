@@ -1,0 +1,70 @@
+#include "sll.h"
+
+address newElement(infotype data){
+    ...
+}
+
+void createNewList(List &a){
+    ...
+}
+
+bool isEmpty(List a){
+    return first(a) == NIL;
+}
+
+//Silahkan uncomment untuk meja NIM ganjil
+//void insertFirst(List &a, address p){
+//    ...
+//}
+
+void insertAfter(List &a, infotype x, address p){
+    //tidak wajib diisi
+}
+
+//Silahkan uncomment untuk meja NIM genap
+//void insertLast(List &a, address p){
+//    ...
+//}
+
+void deleteFirst(List &a, address p){
+    p = first(a);
+    first(a) = next(p);
+    next(p) = NIL;
+}
+
+void deleteLast(List &a, address p){
+    address q = first(a);
+    while (next(next(q))!= NIL){
+        q = next(q);
+    }
+    p = next(q);
+    next(q) = NIL;
+}
+
+int length(List a){
+    int jml = 1;
+    address p = first(a);
+    if (p == NIL){
+        return 0;
+    } else{
+        while (next(p)!=NIL){
+            jml++;
+            p = next(p);
+        }
+        return jml;
+    }
+}
+
+address findElement(List a, infotype x){
+    address p = first(a);
+    while(info(p).ID != x.ID){
+        p = next(p);
+    }
+    return p;
+}
+
+void printList(List a){
+    ...
+}
+
+//Buatkan subprogram pemisah list
